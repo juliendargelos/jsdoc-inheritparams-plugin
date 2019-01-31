@@ -55,7 +55,10 @@ exports.handlers = {
           parent.params.forEach(param => {
             if(overwrite.some(({name}) => name === param.name)) return
             if(!heirs[longname].params) heirs[longname].params = params
-            params.splice(Math.max(0, params.indexOf(overwrite[offset])), 0, {
+            const actualOffset = overwrite.length
+              ? params.indexOf(overwrite[offset])
+              : params.length
+            params.splice(actualOffset, 0, {
               inherited: name, ...param
             })
           })
