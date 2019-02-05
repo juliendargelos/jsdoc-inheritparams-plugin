@@ -1,6 +1,6 @@
 {
   "name": "jsdoc-inheritparams-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Inherit parameters documentation from any class or function with JSDoc.",
   "repository": "https://github.com/juliendargelos/jsdoc-inheritparams-plugin",
   "author": "Julien Dargelos",

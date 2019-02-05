@@ -6,7 +6,7 @@ exports.defineTags = function(dictionary) {
     canHaveName: false,
     onTagged: (doclet, tag) => {
       if(!doclet.inheritparams) doclet.inheritparams = []
-      const [name, offset] = (tag.value || '').split(':')
+      const [_, name, offset] = tag.value ? (tag.value.match(/^(.+?)(?:([\+\-]\d+))?$/) || []) : []
       doclet.inheritparams.push({name, offset: parseInt(offset, 10) || 0})
     }
   })
